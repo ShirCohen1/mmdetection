@@ -150,7 +150,7 @@ class COCODetection(BaseMetric):
     # _classes = model.CLASSES
 
     def __init__(self,
-                 model,
+                 classes,
                  ann_file: Optional[str] = None,
                  metric: Union[str, List[str]] = 'bbox',
                  iou_thrs: Union[float, Sequence[float], None] = None,
@@ -164,7 +164,7 @@ class COCODetection(BaseMetric):
                  print_results: bool = True,
                  **kwargs) -> None:
 
-        self._classes = model.CLASSES
+        self._classes = classes
         # self.classes = model.CLASSES
 
 
