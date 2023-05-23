@@ -219,7 +219,8 @@ class COCODetection(BaseMetric):
         self._coco_api: Optional[COCO]  # type: ignore
         if ann_file is not None:
             with get_local_path(
-                    filepath=ann_file,
+#                     filepath=ann_file,
+                    filepath = '/content/mmcv-full/mmdetection/data/coco/cityscapes/annotations/+'ann_file'+.json',
                     backend_args=backend_args) as local_path:
                 self._coco_api = COCO(annotation_file=local_path)
                 print(f'Annotation file has {len(self._coco_api.getImgIds())} images')
