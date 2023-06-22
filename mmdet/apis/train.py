@@ -232,7 +232,7 @@ def train_detector(model,
         # priority of IterTimerHook has been modified from 'NORMAL' to 'LOW'.
         runner.register_hook(
             eval_hook(val_dataloader, **eval_cfg), priority='LOW')
-    print(“added_file”)
+    print("added_file")
     resume_from = None
     if cfg.resume_from is None and cfg.get('auto_resume'):
         resume_from = find_latest_checkpoint(cfg.work_dir)
@@ -242,7 +242,7 @@ def train_detector(model,
     if cfg.resume_from:
         runner.resume(cfg.resume_from)
     elif cfg.load_from:
-        print(“check_point”,cfg.load_from)
+        print("check_point",cfg.load_from)
         runner.load_checkpoint(cfg.load_from)
         
     print("start run-----------------------------------")
